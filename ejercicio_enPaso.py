@@ -27,7 +27,7 @@ cometa = Group(
 
 cometa.rotarAngulo = 45
 cometa.dx = 5
-cometa.dy = 7
+cometa.dy = 5
 cometa.alFondo()
 cometa.ancho = 30
 cometa.altura = 15
