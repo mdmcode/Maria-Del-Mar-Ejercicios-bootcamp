@@ -4,19 +4,22 @@ from cmu_graphics import cmu_graphics
 app.fondo = rgb(60, 60, 60)
 
 # anillo
-Circle(200, 200, 110, relleno=None, borde='blancoFantasma', anchuraDeBorde=3, guión=(40, 1))
-Circle(200, 200, 145, relleno=None, borde='blancoFantasma', anchuraDeBorde=3, guión=(80, 1))
+anillo = Group(
+    Circle(200, 200, 110, relleno=None, borde='blancoFantasma', anchuraDeBorde=3, guión=(40, 1)),
+    Circle(200, 200, 145, relleno=None, borde='blancoFantasma', anchuraDeBorde=3, guión=(80, 1)),
 
-# Labels de la brújula
-Label('N', 200, 75, relleno='blancoFantasma', tamaño=30)
-Label('S', 200, 325, relleno='blancoFantasma', tamaño=30)
-Label('W', 75, 200, relleno='blancoFantasma', tamaño=30)
-Label('E', 325, 200, relleno='blancoFantasma', tamaño=30)
+    # Labels de la brújula
+    Label('N', 200, 75, relleno='blancoFantasma', tamaño=30),
+    Label('S', 200, 325, relleno='blancoFantasma', tamaño=30),
+    Label('W', 75, 200, relleno='blancoFantasma', tamaño=30),
+    Label('E', 325, 200, relleno='blancoFantasma', tamaño=30),
+    
+    # Star de fondo
+    Star(200, 200, 100, 12, relleno='blancoFantasma', redondez=20),
+    Star(200, 200, 100, 12, relleno=app.fondo, redondez=10),
+    Star(200, 200, 100, 12, relleno='blancoFantasma', redondez=5)
+)
 
-# Star de fondo
-Star(200, 200, 100, 12, relleno='blancoFantasma', redondez=20)
-Star(200, 200, 100, 12, relleno=app.fondo, redondez=10)
-Star(200, 200, 100, 12, relleno='blancoFantasma', redondez=5)
 
 # Crea una aguja como una Line con el finalDeFlecha igual a Verdadero.
 aguja = Line(200, 200, 200, 120, relleno='carmesí', anchuraDeLinea=8, finalDeFlecha=True)
@@ -31,6 +34,9 @@ def enRatónMovido(ratónX, ratónY):
     # Establezca el x2 y el y2 de la aguja a los valores calculados arriba.
     aguja.x2 = nuevoX2
     aguja.y2 = nuevoY2
+
+    # Hace que el anillo rote para que la aguja siempre apunte al norte
+    anillo.rotarAngulo = ángulo
 
 
 cmu_graphics.run()
