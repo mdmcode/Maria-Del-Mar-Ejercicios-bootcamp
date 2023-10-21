@@ -1,10 +1,10 @@
-# Crea una grafica con arcos que muestre los porcentajes de las distintas religiones alrededor del 
-# mundo
+# Crea una grafica con arcos que muestre los porcentajes de las distintas religiones
 from cmu_graphics import *
 from cmu_graphics import cmu_graphics
 
 poblacionMundial = 7600
 
+# Define una función que nos devuelve un angulo de acuerdo al número de personas
 def obtenerAngulo(personas):
     frecuenciaRelativa = personas/poblacionMundial
 
@@ -14,6 +14,7 @@ def obtenerAngulo(personas):
 # Circulo de fondo
 Circle(200, 200, 150)
 
+# Poblaciones por religión
 cristianos = 2300
 islam = 1900
 hinduismo = 1200
@@ -48,6 +49,5 @@ afrosFinal = arcoAfro.startAngle + arcoAfro.sweepAngle
 
 # Dibuja el arco de los no religiosos
 arcoAteos = Arc(200, 200, 280, 280, afrosFinal, obtenerAngulo(ateos), relleno='blanco')
-ateosFinal = arcoAteos.startAngle + arcoAteos.sweepAngle
 
 cmu_graphics.run()
