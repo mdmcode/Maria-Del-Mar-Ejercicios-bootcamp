@@ -23,7 +23,7 @@ chinos = 394
 ateos = 1200
 afros = 100
 
-# Dibuja el arco de porcentaje cristiano
+# Dibuja el arco de la religión cristiana
 arcoCristianos = Arc(200, 200, 280, 280, 0, obtenerAngulo(cristianos), relleno='azulCielo')
 cristianosFinal = arcoCristianos.startAngle + arcoCristianos.sweepAngle
 
