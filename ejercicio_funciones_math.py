@@ -26,10 +26,10 @@ aguja = Line(200, 200, 200, 120, relleno='carmesí', anchuraDeLinea=8, finalDeFl
 
 def enRatónMovido(ratónX, ratónY):
     # Obtenga el ángulo entre el punto (200, 200) y la posición actual del cursor.
-    ángulo = ánguloA(200, 200, ratónX, ratónY)
+    ángulo = angleTo(200, 200, ratónX, ratónY)
 
     # Use la función obtenerPuntoEnDir para obtener los valores nuevoX2, y nuevoY2 para la aguja.
-    nuevoX2, nuevoY2 = obtenerPuntoEnDir(200, 200, ángulo, 80)
+    nuevoX2, nuevoY2 = getPointInDir(200, 200, ángulo, 80)
 
     # Establezca el x2 y el y2 de la aguja a los valores calculados arriba.
     aguja.x2 = nuevoX2

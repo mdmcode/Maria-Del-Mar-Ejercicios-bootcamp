@@ -1,4 +1,5 @@
 from cmu_graphics import *
+from cmu_graphics import cmu_graphics
 
 app.fondo = 'negro'
 
@@ -7,19 +8,19 @@ Label('*No a escala', 340, 370, relleno='blanco', tamaño=16)
 sol = Star(200, 200, 35, 400, relleno=gradient('naranja', 'amarillo', 'rojoNaranja'))
 
 luna = Group(
-    Circulo(200, 50, 20, relleno=None, borde='grisOscuro'),
-    Circulo(200, 30, 5, relleno='gris')
+    Circle(200, 50, 20, relleno=None, borde='grisOscuro'),
+    Circle(200, 30, 5, relleno='gris')
 )
 
 tierra = Group(
-    Círculo(200, 200, 150, relleno=None, borde='grisOscuro'),
-    Círculo(200, 50, 10, relleno=gradient('verde', 'azulReal', inicio='izquierda-superior')),
+    Circle(200, 200, 150, relleno=None, borde='grisOscuro'),
+    Circle(200, 50, 10, relleno=gradient('verde', 'azulReal', inicio='izquierda-superior')),
     luna
     )
 
 cometa = Group(
-    Circulo(200, 200, 10, relleno='blanco'),
-    Poligono(200, 190, 170, 200, 200, 210, 
+    Circle(200, 200, 10, relleno='blanco'),
+    Polygon(200, 190, 170, 200, 200, 210, 
              relleno=gradient('mocasín', 'amarilloClaro', 'blanco', 
                               inicio='izquierda-superior'),
                               opacidad=50)
@@ -33,8 +34,8 @@ cometa.ancho = 30
 cometa.altura = 15
 
 marte = Group(
-    Círculo(200, 200, 100, relleno=None, borde='grisOscuro'),
-    Círculo(200, 100, 7, relleno=gradient('rojo', 'marron', inicio='izquierda-superior'))
+    Circle(200, 200, 100, relleno=None, borde='grisOscuro'),
+    Circle(200, 100, 7, relleno=gradient('rojo', 'marron', inicio='izquierda-superior'))
     )
 
 luna.dirección = 'sentido-horario'
